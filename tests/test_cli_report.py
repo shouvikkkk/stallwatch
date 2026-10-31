@@ -88,8 +88,10 @@ class TestReport(unittest.TestCase):
         self.assertTrue(data["findings"])
 
     def test_text_report_names_stall_step_and_wasted_tokens(self):
-        steps = [mk(i, "Read", {"file_path": "a.py"}, output="same", tokens=10)
-            for i in (1, 2, 3)]
+        steps = [
+            mk(i, "Read", {"file_path": "a.py"}, output="same", tokens=10)
+            for i in (1, 2, 3)
+        ]
         text = render_text(analyze(steps))
         self.assertIn("First stall step: 1", text)
         self.assertIn("Wasted tokens: 30", text)
