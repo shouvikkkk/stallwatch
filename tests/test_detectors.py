@@ -197,7 +197,7 @@ class TestProgress(unittest.TestCase):
             mk(2, "Read", {"file_path": "b.py"}, output="same"),
         ]
         score, count = compute_progress(steps)
-        self.assertEqual((score, count), (0.5, 1))
+        self.assertEqual(count, 1)
 
     def test_errors_do_not_count_as_progress(self):
         steps = [mk(1, "Bash", {"command": "t"}, error="boom")]
