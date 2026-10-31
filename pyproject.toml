@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stallwatch"
+version = "0.1.0"
+description = "Detect stalls in finished coding-agent run traces."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Shouvik Maji" }]
+keywords = ["ai-agents", "coding-agents", "trace-analysis", "debugging"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.scripts]
+stallwatch = "stallwatch.cli:entry"
+
+[tool.setuptools]
+packages = ["stallwatch"]
